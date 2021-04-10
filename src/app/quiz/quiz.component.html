@@ -1,0 +1,98 @@
+<!-- <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div *ngFor="let question of questions">
+    <p>{{ question.question }}</p>
+    <select name="qna" id="">
+      <option [value]="option.value"  *ngFor="let option of question.options">
+        {{ option.valueText }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form> -->
+
+<form class="center" action="" [formGroup]="quizForm">
+  <!-- <div class="form-group">
+    <label>{{ questions[0].question }}</label>
+    <select
+      name="question0"
+      formControlName="question1"
+      #answer1
+      class="form-control"
+    >
+      <option
+        *ngFor="let option of questions[0].options"
+        [value]="option.value"
+      >
+        {{ option.valueText }}
+      </option>
+    </select>
+    <p *ngIf="!answer1">Wrong answer</p>
+  </div> -->
+  <div class="form-group">
+    <label>{{ questions[1].question }}</label>
+    <select name="question1" formControlName="question2" class="form-control">
+      <option
+        *ngFor="let option of questions[1].options"
+        [value]="option.value"
+      >
+        {{ option.valueText }}
+      </option>
+    </select>
+    <div>
+      <p class="alert alert-danger" *ngIf="!answer2">Wrong Answer</p>
+      <p class="alert alert-success" *ngIf="answer2">Correct Answer</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>{{ questions[2].question }}</label>
+    <select name="question2" formControlName="question3" class="form-control">
+      <option
+        *ngFor="let option of questions[2].options"
+        [value]="option.value"
+      >
+        {{ option.valueText }}
+      </option>
+    </select>
+    <p class="alert alert-danger" *ngIf="!answer3">Wrong Answer</p>
+    <p class="alert alert-success" *ngIf="answer3">Correct Answer</p>
+  </div>
+  <div class="form-group">
+    <label>{{ questions[3].question }}</label>
+    <select name="question3" formControlName="question4" class="form-control">
+      <option
+        *ngFor="let option of questions[3].options"
+        [value]="option.value"
+      >
+        {{ option.valueText }}
+      </option>
+    </select>
+    <p class="alert alert-danger" *ngIf="!answer4">Wrong Answer</p>
+    <p class="alert alert-success" *ngIf="answer4">Correct Answer</p>
+  </div>
+  <div class="form-group">
+    <label>{{ questions[4].question }}</label>
+    <select name="question4" formControlName="question5" class="form-control">
+      <option
+        *ngFor="let option of questions[4].options"
+        [value]="option.value"
+      >
+        {{ option.valueText }}
+      </option>
+    </select>
+    <p class="alert alert-danger" *ngIf="!answer5">Wrong Answer</p>
+    <p class="alert alert-success" *ngIf="answer5">Correct Answer</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <button class="btn btn-primary btn-block" (click)="submitHandler()">
+        Submit
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-danger btn-block" (click)="clear()">Clear</button>
+    </div>
+  </div>
+</form>
